@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dmpnoeq5tempy"]
+
+[ext_resource type="Script" uid="uid://cxmtqjl3vpwnw" path="res://Scripts/checkpoint.gd" id="1_lbcco"]
+[ext_resource type="AudioStream" uid="uid://d3kl66aw20e00" path="res://Audio/checkpoint.mp3" id="2_2cwi7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_htemk"]
+size = Vector2(24, 40)
+
+[node name="Checkpoint" type="Area2D" unique_id=645278541]
+script = ExtResource("1_lbcco")
+
+[node name="Pole" type="ColorRect" parent="." unique_id=1807528652]
+offset_left = -1.0
+offset_top = -32.0
+offset_right = 1.0
+color = Color(0.8509804, 0.83137256, 0.84705883, 1)
+
+[node name="Flag" type="ColorRect" parent="." unique_id=1603900409]
+offset_left = 1.0
+offset_top = -32.0
+offset_right = 13.0
+offset_bottom = -24.0
+color = Color(0.3647059, 0.44313726, 0.6039216, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1131503827]
+position = Vector2(0, -20)
+shape = SubResource("RectangleShape2D_htemk")
+
+[node name="ChimeSound" type="AudioStreamPlayer2D" parent="." unique_id=830412673]
+stream = ExtResource("2_2cwi7")
