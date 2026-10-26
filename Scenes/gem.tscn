@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://deae4rktb8mmd"]
+
+[ext_resource type="Script" uid="uid://bnhuvyq00dpp2" path="res://Scripts/gem.gd" id="1_bti4x"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_htemk"]
+radius = 8.0
+
+[node name="Gem" type="Area2D" unique_id=1338198475]
+script = ExtResource("1_bti4x")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1177615284]
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 5.0
+rotation = 0.7853982
+pivot_offset = Vector2(5, 5)
+color = Color(0, 0.6117647, 0.5372549, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=359492729]
+shape = SubResource("CircleShape2D_htemk")

@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://cqja3jkys2o68"]
+
+[ext_resource type="Script" uid="uid://bfx7naoqgcskq" path="res://Scripts/player.gd" id="1_v0iea"]
+[ext_resource type="AudioStream" uid="uid://dmbmgl21y46wd" path="res://Audio/Jump.mp3" id="2_6t5aa"]
+[ext_resource type="AudioStream" uid="uid://cmkwhtlqi2nae" path="res://Audio/hurt.mp3" id="3_6t5aa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_14cdr"]
+size = Vector2(12, 16)
+
+[node name="Player" type="CharacterBody2D" unique_id=1303322482]
+script = ExtResource("1_v0iea")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=231324486]
+offset_left = -6.0
+offset_top = -8.0
+offset_right = 6.0
+offset_bottom = 8.0
+color = Color(0.85882354, 0.5882353, 0.57254905, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=249523027]
+shape = SubResource("RectangleShape2D_14cdr")
+
+[node name="Left eye" type="ColorRect" parent="." unique_id=1176701439]
+offset_left = -4.0
+offset_top = -5.0
+offset_right = -2.0
+offset_bottom = -2.0
+color = Color(0.1764706, 0.15294118, 0.1882353, 1)
+
+[node name="Right eye" type="ColorRect" parent="." unique_id=1276747903]
+offset_left = 2.0
+offset_top = -5.0
+offset_right = 4.0
+offset_bottom = -2.0
+color = Color(0.1764706, 0.15294118, 0.1882353, 1)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1444857898]
+limit_left = 0
+limit_top = 0
+limit_bottom = 360
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=1928055390]
+stream = ExtResource("2_6t5aa")
+
+[node name="HurtSound" type="AudioStreamPlayer2D" parent="." unique_id=141492144]
+stream = ExtResource("3_6t5aa")
