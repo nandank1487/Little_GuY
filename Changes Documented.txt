@@ -1,0 +1,8 @@
+I. Jump Changes:-
+
+	1. Changed the jump function of the Little guy:
+		now a tap on the the jump buttons(W, Space and UP Arrow) make the character hop and holding these buttons will make him jusmp higher
+	2. Added Coyote time:
+		now the character can jump split seconds late after walking off a platform
+	3. Added jump buffering:
+		now upon pressing jump before the charavter lands, the Character will jump as soon as it touches the ground.

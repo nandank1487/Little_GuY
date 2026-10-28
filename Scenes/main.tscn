@@ -3,9 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://cqja3jkys2o68" path="res://Scenes/player.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://cavjqmqoaoiw2" path="res://Scripts/main.gd" id="1_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://cqxj7f1wqvod0" path="res://Scenes/chunk_1.tscn" id="2_8gbba"]
-[ext_resource type="AudioStream" uid="uid://dgnyas8n7ln12" path="res://Audio/music.mp3" id="4_21xkr"]
-[ext_resource type="AudioStream" uid="uid://caceoadlwmsmg" path="res://Audio/gem.wav" id="4_kry3j"]
-[ext_resource type="AudioStream" uid="uid://bv2wjytkhgufj" path="res://Audio/Gamoever.wav" id="6_21xkr"]
+[ext_resource type="AudioStream" uid="uid://dgnyas8n7ln12" path="res://Little_GuY/Audio/music.mp3" id="4_21xkr"]
+[ext_resource type="AudioStream" uid="uid://caceoadlwmsmg" path="res://Little_GuY/Audio/gem.wav" id="4_kry3j"]
+[ext_resource type="AudioStream" uid="uid://bv2wjytkhgufj" path="res://Little_GuY/Audio/Gamoever.wav" id="6_21xkr"]
 
 [node name="Main" type="Node2D" unique_id=428900561]
 script = ExtResource("1_jjvhh")
@@ -39,7 +39,6 @@ horizontal_alignment = 1
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=65836687]
 stream = ExtResource("4_21xkr")
-volume_db = -10.0
 autoplay = true
 
 [node name="GemSound" type="AudioStreamPlayer" parent="." unique_id=348500117]

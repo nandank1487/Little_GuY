@@ -10,29 +10,41 @@ size = Vector2(12, 16)
 [node name="Player" type="CharacterBody2D" unique_id=1303322482]
 script = ExtResource("1_v0iea")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=231324486]
+[node name="Visual" type="Node2D" parent="." unique_id=335606194]
+
+[node name="ColorRect" type="ColorRect" parent="Visual" unique_id=231324486]
 offset_left = -6.0
 offset_top = -8.0
 offset_right = 6.0
 offset_bottom = 8.0
 color = Color(0.85882354, 0.5882353, 0.57254905, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=249523027]
-shape = SubResource("RectangleShape2D_14cdr")
-
-[node name="Left eye" type="ColorRect" parent="." unique_id=1176701439]
+[node name="Left eye" type="ColorRect" parent="Visual" unique_id=1176701439]
 offset_left = -4.0
 offset_top = -5.0
 offset_right = -2.0
 offset_bottom = -2.0
 color = Color(0.1764706, 0.15294118, 0.1882353, 1)
 
-[node name="Right eye" type="ColorRect" parent="." unique_id=1276747903]
+[node name="Right eye" type="ColorRect" parent="Visual" unique_id=1276747903]
 offset_left = 2.0
 offset_top = -5.0
 offset_right = 4.0
 offset_bottom = -2.0
 color = Color(0.1764706, 0.15294118, 0.1882353, 1)
+
+[node name="LandDust" type="CPUParticles2D" parent="." unique_id=453892196]
+emitting = false
+lifetime = 0.4
+one_shot = true
+explosiveness = 1.0
+direction = Vector2(0, -1)
+gravity = Vector2(0, 100)
+initial_velocity_min = 30.0
+initial_velocity_max = 60.0
+scale_amount_min = 1.5
+scale_amount_max = 3.0
+color = Color(0.8627451, 0.6862745, 0.5686275, 1)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1444857898]
 limit_left = 0
@@ -44,3 +56,6 @@ stream = ExtResource("2_6t5aa")
 
 [node name="HurtSound" type="AudioStreamPlayer2D" parent="." unique_id=141492144]
 stream = ExtResource("3_6t5aa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=249523027]
+shape = SubResource("RectangleShape2D_14cdr")
