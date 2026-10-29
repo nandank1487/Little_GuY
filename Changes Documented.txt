@@ -6,3 +6,20 @@ I. Jump Changes:-
 		now the character can jump split seconds late after walking off a platform
 	3. Added jump buffering:
 		now upon pressing jump before the charavter lands, the Character will jump as soon as it touches the ground.
+
+II. Animations: Squish, Strech and Dust effects:-
+	1. now jumping and landing has strech and squish animations and Dust effects on landing 
+
+III.Saving the Game on drive:-
+	now the game saves the highest score on the drive
+
+IV. Pause Menu:-
+	now the game have have the Pause and Quit to Menu options
+
+V. Highest Score on Pause Menu:-
+	now Pause menu also shows the Highest Score
+	
+VI. Character Movement Speed:-
+	Increased the moovement speed for two reasons
+		# The character was getting stuck at some points where player lost 2-3 lives just trying to tackle the hazard which seemed unfair as the game is made endless players should play for a longer time.
+		

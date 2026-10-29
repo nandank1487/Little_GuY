@@ -2,6 +2,8 @@ extends Node2D
 
 static var highest = 0
 
+const SAVE_PATH = "user://save.cfg"
+
 var chunk_width = 640
 var next_chunk_x = 640
 var chunk_count = 1
@@ -37,6 +39,7 @@ func _ready():
 	$Player.game_over.connect(_on_game_over)
 
 	setup_chunk($Chunks/Chunk1)
+	load_highest()
 	update_score()
 
 
@@ -113,6 +116,7 @@ func _on_lives_changed(new_lives):
 	update_score()
 
 func _on_game_over():
+	save_highest()
 	$Music.stop()
 	$GameOverSound.play()
 	$UI/GameOverLabel.visible = true
@@ -123,3 +127,21 @@ func _on_game_over():
 
 func update_score():
 	$UI/ScoreLabel.text = "Lives: " + str($Player.lives) + "   Highest: " + str(highest) + "   Gems: " + str(gems_collected)
+
+
+func load_highest():
+	var config = ConfigFile.new()
+	if config.load(SAVE_PATH) == OK:
+		var saved = config.get_value("score", "highest", 0)
+		if saved > highest:
+			highest = saved
+
+func save_highest():
+	var config = ConfigFile.new()
+	config.set_value("score", "highest", highest)
+	config.save(SAVE_PATH)
+
+
+func _notification(what):
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		save_highest()

@@ -7,7 +7,6 @@ func _ready():
 	$VBoxContainer/StartButton.grab_focus()
 
 
-
 func _process(delta):
 	# the little character bounce up and down on the menu screen
 	time = time + delta

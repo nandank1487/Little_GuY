@@ -1,9 +1,10 @@
 extends CharacterBody2D
 
+
 signal lives_changed(lives)
 signal game_over
 
-var speed = 120.0
+var speed = 175.0
 var jump_velocity = -300.0
 
 # Game feel settings (tweak these!)
@@ -96,6 +97,10 @@ func die():
 	lives = lives - 1
 	$HurtSound.play()
 	lives_changed.emit(lives)
+
+	var cam = get_viewport().get_camera_2d()
+	if cam != null and cam.has_method("shake"):
+		cam.shake(6.0) 
 
 	if lives == 0:
 		is_dead = true

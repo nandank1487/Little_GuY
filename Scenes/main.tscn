@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cqja3jkys2o68" path="res://Scenes/player.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://cavjqmqoaoiw2" path="res://Scripts/main.gd" id="1_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://cqxj7f1wqvod0" path="res://Scenes/chunk_1.tscn" id="2_8gbba"]
+[ext_resource type="Script" uid="uid://bsr0sogu05qlv" path="res://Scripts/pause_menu.gd" id="4_6bp64"]
 [ext_resource type="AudioStream" uid="uid://dgnyas8n7ln12" path="res://Little_GuY/Audio/music.mp3" id="4_21xkr"]
 [ext_resource type="AudioStream" uid="uid://caceoadlwmsmg" path="res://Little_GuY/Audio/gem.wav" id="4_kry3j"]
 [ext_resource type="AudioStream" uid="uid://bv2wjytkhgufj" path="res://Little_GuY/Audio/Gamoever.wav" id="6_21xkr"]
@@ -16,6 +17,57 @@ script = ExtResource("1_jjvhh")
 
 [node name="Player" parent="." unique_id=1303322482 instance=ExtResource("1_jjgbg")]
 position = Vector2(32, 193)
+
+[node name="PauseMenu" type="Control" parent="." unique_id=565483358]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_6bp64")
+
+[node name="Dim" type="ColorRect" parent="PauseMenu" unique_id=739031939]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.39215687)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu" unique_id=283658666]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 99.0
+offset_top = 109.0
+offset_right = 566.0
+offset_bottom = 264.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLable" type="Label" parent="PauseMenu/VBoxContainer" unique_id=1906993268]
+layout_mode = 2
+text = "PAUSED"
+horizontal_alignment = 1
+
+[node name="HighestLabel" type="Label" parent="PauseMenu/VBoxContainer" unique_id=1013187042]
+layout_mode = 2
+text = "Highest : 0"
+horizontal_alignment = 1
+
+[node name="ResumeButton" type="Button" parent="PauseMenu/VBoxContainer" unique_id=1257687953]
+layout_mode = 2
+text = "Resume"
+
+[node name="QuitButton" type="Button" parent="PauseMenu/VBoxContainer" unique_id=297746845]
+layout_mode = 2
+text = "Quit to Menu"
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1906848028]
 

@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://cqja3jkys2o68"]
 
-[ext_resource type="Script" uid="uid://bfx7naoqgcskq" path="res://Scripts/player.gd" id="1_v0iea"]
-[ext_resource type="AudioStream" uid="uid://dmbmgl21y46wd" path="res://Audio/Jump.mp3" id="2_6t5aa"]
-[ext_resource type="AudioStream" uid="uid://cmkwhtlqi2nae" path="res://Audio/hurt.mp3" id="3_6t5aa"]
+[ext_resource type="Script" uid="uid://bfx7naoqgcskq" path="res://Little_GuY/Scripts/player.gd" id="1_v0iea"]
+[ext_resource type="AudioStream" uid="uid://dmbmgl21y46wd" path="res://Little_GuY/Audio/Jump.mp3" id="2_6t5aa"]
+[ext_resource type="Script" uid="uid://c7t6guhv5ycnv" path="res://Scripts/camera_2d.gd" id="2_vgqql"]
+[ext_resource type="AudioStream" uid="uid://cmkwhtlqi2nae" path="res://Little_GuY/Audio/hurt.mp3" id="3_6t5aa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_14cdr"]
 size = Vector2(12, 16)
@@ -50,6 +51,7 @@ color = Color(0.8627451, 0.6862745, 0.5686275, 1)
 limit_left = 0
 limit_top = 0
 limit_bottom = 360
+script = ExtResource("2_vgqql")
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=1928055390]
 stream = ExtResource("2_6t5aa")
