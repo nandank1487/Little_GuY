@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://u1bwt0rqf8an"]
 
 [ext_resource type="Script" uid="uid://vsy7cwytr7jk" path="res://Scripts/enemy.gd" id="1_1f0kj"]
-[ext_resource type="Texture2D" uid="uid://1d7eexj3bkmg" path="res://icon.svg" id="2_afpow"]
+[ext_resource type="Texture2D" uid="uid://bqgdpblw3u57u" path="res://Art/monster.png" id="2_1f0kj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_htemk"]
 size = Vector2(12, 12)
@@ -14,8 +14,8 @@ collision_layer = 2
 script = ExtResource("1_1f0kj")
 
 [node name="Visual" type="Sprite2D" parent="." unique_id=488684024]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_afpow")
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("2_1f0kj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=59486486]
 shape = SubResource("RectangleShape2D_htemk")
