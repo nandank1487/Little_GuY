@@ -7,6 +7,11 @@ func _ready():
 	visible = false
 	$VBoxContainer/ResumeButton.pressed.connect(resume)
 	$VBoxContainer/QuitButton.pressed.connect(_on_quit_pressed)
+	$VBoxContainer/QuitGameButton.pressed.connect(_on_quit_game_pressed)
+	if OS.has_feature("web"):
+		$VBoxContainer/QuitGameButton.hide()   # browsers can't be closed by the game
+
+
 
 func _input(event):
 	if event.is_action_pressed("pause"):
@@ -34,10 +39,15 @@ func resume():
 	visible = false
 
 
+
 func _on_quit_pressed():
 	get_tree().current_scene.save_highest()
-	get_tree().paused = false # must unpause before changing scene
+	get_tree().paused = false      # must unpause before changing scene
 	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
 
+
+func _on_quit_game_pressed():
+	get_tree().current_scene.save_highest()   # quit() skips the close-request save
+	get_tree().quit()
 
 

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dmpnoeq5tempy"]
 
 [ext_resource type="Script" uid="uid://cxmtqjl3vpwnw" path="res://Scripts/checkpoint.gd" id="1_lbcco"]
-[ext_resource type="AudioStream" uid="uid://d3kl66aw20e00" path="res://Audio/checkpoint.mp3" id="2_2cwi7"]
+[ext_resource type="AudioStream" uid="uid://d3kl66aw20e00" path="res://Little_GuY/Audio/checkpoint.mp3" id="2_2cwi7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_htemk"]
 size = Vector2(24, 40)

@@ -3,6 +3,8 @@ extends Control
 var time = 0.0
 
 func _ready():
+	print("aspect: ", get_window().content_scale_aspect, "  window: ", get_window().size, "  visible: ", get_viewport().get_visible_rect().size)
+	get_window().content_scale_aspect = Window.CONTENT_SCALE_ASPECT_KEEP_HEIGHT
 	$VBoxContainer/StartButton.pressed.connect(_on_start_pressed)
 	$VBoxContainer/StartButton.grab_focus()
 

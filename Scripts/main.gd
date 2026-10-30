@@ -85,12 +85,15 @@ func setup_chunk(chunk):
 	if chunk.has_node("Gems"):
 		var gems_folder = chunk.get_node("Gems")
 		for gem in gems_folder.get_children():
-			gem.collected.connect(_on_gem_collected)
+			if gem.has_signal("collected"):
+				gem.collected.connect(_on_gem_collected)
 
 	# To put a checkpoint flag at the end of each chunk
 	var flag = checkpoint_scene.instantiate()
 	flag.position = Vector2(608, 296)
 	chunk.add_child(flag)
+
+
 
 
 
@@ -114,6 +117,7 @@ func _on_gem_collected():
 
 func _on_lives_changed(new_lives):
 	update_score()
+
 
 func _on_game_over():
 	save_highest()

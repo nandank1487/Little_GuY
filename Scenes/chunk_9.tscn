@@ -1,8 +1,9 @@
 [gd_scene format=4 uid="uid://b6p72mcggw67w"]
 
-[ext_resource type="TileSet" uid="uid://prev6vvesobo" path="res://Art/world_tileset.tres" id="1_pefc0"]
+[ext_resource type="TileSet" uid="uid://prev6vvesobo" path="res://Little_GuY/Art/world_tileset.tres" id="1_pefc0"]
 [ext_resource type="PackedScene" uid="uid://deae4rktb8mmd" path="res://Scenes/gem.tscn" id="2_rut7j"]
 [ext_resource type="PackedScene" uid="uid://c5hcxdff5acrq" path="res://Scenes/spikes.tscn" id="3_yvnsp"]
+[ext_resource type="PackedScene" uid="uid://u1bwt0rqf8an" path="res://Scenes/enemy.tscn" id="4_rut7j"]
 
 [node name="Chunk1" type="Node2D" unique_id=1762858681]
 
@@ -96,3 +97,6 @@ position = Vector2(327, 290)
 
 [node name="Spikes3" parent="Hazards" unique_id=938293753 instance=ExtResource("3_yvnsp")]
 position = Vector2(311, 290)
+
+[node name="Enemy" parent="." unique_id=1384148147 instance=ExtResource("4_rut7j")]
+position = Vector2(357, 267)
