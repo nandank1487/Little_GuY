@@ -40,3 +40,5 @@ XI. Added current score in game window:
 
 XII. Added Touch Controls for Mobile devices
 	1. Added touch controls (testing)
+
+XIII. Improved Touch Controls UI
