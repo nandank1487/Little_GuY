@@ -6,7 +6,8 @@
 
 # 
 
-# Play it: https://YOUR-NAME.itch.io/YOUR-GAME
+# (jame gam version) Play it: https://nandank1487.itch.io/little-guy
+# (Savepoint Version) Play it: https://nandank1487.itch.io/little-guy-spv
 
 # 
 
