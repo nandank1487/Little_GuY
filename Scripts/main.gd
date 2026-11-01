@@ -4,11 +4,13 @@ static var highest = 0
 
 const SAVE_PATH = "user://save.cfg"
 
+
 var chunk_width = 640
 var next_chunk_x = 640
 var chunk_count = 1
 var last_scene = null
 var gems_collected = 0
+var current = 0 
 
 
 
@@ -22,7 +24,6 @@ var level_chunks = [
 	preload("res://Scenes/chunk_9.tscn"),
 	preload("res://Scenes/chunk_10.tscn"),
 ]
-
 
 
 var rest_stop = preload("res://Scenes/chunk_5.tscn")
@@ -54,8 +55,10 @@ func _process(delta):
 	remove_old_chunks()
 
 	var distance = int($Player.global_position.x / 16)
-	if distance > highest:
-		highest = distance
+	if distance > current:
+		current = distance
+		if current > highest:
+			highest = current
 		update_score()
 
 
@@ -115,7 +118,8 @@ func _on_gem_collected():
 	update_score()
 
 
-func _on_lives_changed(new_lives):
+func _on_lives_changed(_new_lives):
+	save_highest()
 	update_score()
 
 
@@ -131,7 +135,7 @@ func _on_game_over():
 
 func update_score():
 	$UI/ScoreLabel.text = "Lives: " + str($Player.lives) + "   Highest: " + str(highest) + "   Gems: " + str(gems_collected)
-
+	$UI/DistanceLabel.text = "Score: " + str(current)
 
 func load_highest():
 	var config = ConfigFile.new()
@@ -143,7 +147,7 @@ func load_highest():
 func save_highest():
 	var config = ConfigFile.new()
 	config.set_value("score", "highest", highest)
-	config.save(SAVE_PATH)
+	var err = config.save(SAVE_PATH)
 
 
 func _notification(what):

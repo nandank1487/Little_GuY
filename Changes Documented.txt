@@ -31,3 +31,12 @@ VIII. Quit function :-
 
 IX. Added moving enemies in the game:-
 	1. There will be seeral enemies in the game who would move left and right on Floor and platforms, if a player jumps on enemies, enemy will die.
+
+X. Added Highest Score in Main Menu:
+	1. Now Highest score will show in Main Menu (Start menu)
+
+XI. Added current score in game window:
+	1. Now the game will show current score while the game is running
+
+XII. Added Touch Controls for Mobile devices
+	1. Added touch controls (testing)

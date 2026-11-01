@@ -77,7 +77,18 @@ func stomp(player):
 	player.velocity.y = player.jump_velocity * 0.7
 	player.squash(0.75, 1.25)
 
-	# Squish flat and then Disappear
+	$StompSound.pitch_scale = randf_range(0.9, 1.1)
+	$StompSound.play()
+
 	var tween = create_tween()
 	tween.tween_property(visual, "scale:y", 0.0, 0.12)
-	tween.tween_callback(queue_free)
+	await tween.finished
+
+	# Only disappear once the sound is done
+
+	if $StompSound.playing:
+		await $StompSound.finished
+	queue_free()
+	
+
+	

@@ -7,6 +7,11 @@ func _ready():
 	get_window().content_scale_aspect = Window.CONTENT_SCALE_ASPECT_KEEP_HEIGHT
 	$VBoxContainer/StartButton.pressed.connect(_on_start_pressed)
 	$VBoxContainer/StartButton.grab_focus()
+	var config = ConfigFile.new()
+	var result = config.load("user://save.cfg")
+	var best = 0
+	if result == OK:
+		best = config.get_value("score", "highest", 0)
 
 
 func _process(delta):

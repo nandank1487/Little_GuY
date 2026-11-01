@@ -31,6 +31,7 @@ func pause():
 	visible = true
 	$VBoxContainer/ResumeButton.grab_focus()
 	var main = get_tree().current_scene
+	main.save_highest()
 	$VBoxContainer/HighestLabel.text = "Highest: " + str(main.highest)
 
 
@@ -46,8 +47,10 @@ func _on_quit_pressed():
 	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
 
 
+
 func _on_quit_game_pressed():
-	get_tree().current_scene.save_highest()   # quit() skips the close-request save
+	get_tree().current_scene.save_highest()   
 	get_tree().quit()
+
 
 

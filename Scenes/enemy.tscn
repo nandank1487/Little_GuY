@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://vsy7cwytr7jk" path="res://Scripts/enemy.gd" id="1_1f0kj"]
 [ext_resource type="Texture2D" uid="uid://bqgdpblw3u57u" path="res://Art/monster.png" id="2_1f0kj"]
+[ext_resource type="AudioStream" uid="uid://c5bi8nf0eagpu" path="res://Audio/stomp.mp3" id="3_afpow"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_htemk"]
 size = Vector2(12, 12)
@@ -29,3 +30,7 @@ collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=806993785]
 shape = SubResource("RectangleShape2D_14cdr")
+
+[node name="StompSound" type="AudioStreamPlayer2D" parent="." unique_id=1123148103]
+stream = ExtResource("3_afpow")
+volume_db = 22.836
