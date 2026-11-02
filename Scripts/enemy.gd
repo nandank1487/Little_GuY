@@ -37,7 +37,7 @@ func _physics_process(delta):
 
 	# To turn around a wall, or at the edge of a platform
 
-	if is_on_wall() or (is_on_floor() and not floor_check.is_colliding()):
+	if (is_on_wall() and get_wall_normal().x * direction < 0) or (is_on_floor() and not floor_check.is_colliding()):
 		turn_around()
 
 	if global_position.y > 600:
@@ -89,6 +89,4 @@ func stomp(player):
 	if $StompSound.playing:
 		await $StompSound.finished
 	queue_free()
-	
-
 	

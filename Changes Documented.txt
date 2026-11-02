@@ -42,3 +42,6 @@ XII. Added Touch Controls for Mobile devices
 	1. Added touch controls (testing)
 
 XIII. Improved Touch Controls UI
+
+XIV. Improved some minor functions (unnoticable mostly)
+	1. made some minor improvements 

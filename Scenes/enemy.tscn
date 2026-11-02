@@ -33,4 +33,4 @@ shape = SubResource("RectangleShape2D_14cdr")
 
 [node name="StompSound" type="AudioStreamPlayer2D" parent="." unique_id=1123148103]
 stream = ExtResource("3_afpow")
-volume_db = 22.836
+volume_db = 7.762

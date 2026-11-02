@@ -113,7 +113,8 @@ func remove_old_chunks():
 
 
 func _on_gem_collected():
-	gems_collected = gems_collected + 1
+	gems_collected += 1 
+	$GemSound.pitch_scale = randf_range(0.95, 1.08)
 	$GemSound.play()
 	update_score()
 

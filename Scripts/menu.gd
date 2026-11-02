@@ -12,6 +12,8 @@ func _ready():
 	var best = 0
 	if result == OK:
 		best = config.get_value("score", "highest", 0)
+	if has_node("VBoxContainer/BestLabel"):
+		$VBoxContainer/BestLabel.text = "Best: " + str(best)
 
 
 func _process(delta):

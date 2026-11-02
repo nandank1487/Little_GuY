@@ -17,7 +17,7 @@ const BORDER_PRESSED = Color(1, 1, 1, 0.95)
 var left_btn
 var right_btn
 var jump_btn
-var pause_btn
+var pause_btn 
 
 
 func _ready():
@@ -63,6 +63,7 @@ func make_button(action, label_text, btn_size, font_size, slide_to_press):
 	return btn
 
 
+
 func make_texture(tex_size, fill_color, border_color):
 	var img = Image.create(tex_size, tex_size, false, Image.FORMAT_RGBA8)
 	var half = tex_size / 2.0
@@ -91,3 +92,6 @@ func place_buttons():
 	right_btn.position = Vector2(MARGIN + MOVE_SIZE + BUTTON_GAP, screen.y - MOVE_SIZE - MARGIN)
 	jump_btn.position = Vector2(screen.x - JUMP_SIZE - MARGIN, screen.y - JUMP_SIZE - MARGIN)
 	pause_btn.position = Vector2(screen.x - PAUSE_SIZE - MARGIN, 34)
+
+
+
