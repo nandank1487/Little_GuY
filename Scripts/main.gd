@@ -12,6 +12,8 @@ var last_scene = null
 var gems_collected = 0
 var current = 0 
 
+var distance_score = 0
+var bonus_points = 0
 
 
 var level_chunks = [
@@ -55,10 +57,8 @@ func _process(delta):
 	remove_old_chunks()
 
 	var distance = int($Player.global_position.x / 16)
-	if distance > current:
-		current = distance
-		if current > highest:
-			highest = current
+	if distance > distance_score:
+		distance_score = distance
 		update_score()
 
 
@@ -91,11 +91,19 @@ func setup_chunk(chunk):
 			if gem.has_signal("collected"):
 				gem.collected.connect(_on_gem_collected)
 
+	for enemy in chunk.find_children("*", "", true, false):
+		if enemy.has_signal("stomped") and enemy.has_method("stomp"):
+			if not enemy.stomped.is_connected(_on_enemy_stomped):
+				enemy.stomped.connect(_on_enemy_stomped)
+				
+
 	# To put a checkpoint flag at the end of each chunk
 	var flag = checkpoint_scene.instantiate()
 	flag.position = Vector2(608, 296)
 	chunk.add_child(flag)
+	
 
+	
 
 
 
@@ -114,6 +122,7 @@ func remove_old_chunks():
 
 func _on_gem_collected():
 	gems_collected += 1 
+	bonus_points += 5
 	$GemSound.pitch_scale = randf_range(0.95, 1.08)
 	$GemSound.play()
 	update_score()
@@ -128,16 +137,30 @@ func _on_game_over():
 	save_highest()
 	$Music.stop()
 	$GameOverSound.play()
-	$UI/GameOverLabel.visible = true
+	
+	var label = $UI/GameOverLabel
+	label.visible = true
+	label.modulate = Color(1, 1, 1, 0)
 
-	# to wait 2 seconds and restart the game
-	await get_tree().create_timer(2.0).timeout
-	get_tree().reload_current_scene()
+	var tween = create_tween()
+	tween.tween_property(label, "modulate:a", 1.0, 0.6)
+	await tween.finished
+
+	await get_tree().create_timer(1.2).timeout
+	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
+
 
 func update_score():
-	$UI/ScoreLabel.text = "Lives: " + str($Player.lives) + "   Highest: " + str(highest) + "   Gems: " + str(gems_collected)
-	$UI/DistanceLabel.text = "Score: " + str(current)
+	var total_score = distance_score + bonus_points
 
+	if total_score > highest:
+		highest = total_score
+		save_highest()
+	$UI/ScoreLabel.text = "Lives: " + str($Player.lives) + "   Highest: " + str(highest) + "   Gems: " + str(gems_collected)
+	$UI/DistanceLabel.text = "Score: " + str(total_score)
+
+
+	
 func load_highest():
 	var config = ConfigFile.new()
 	if config.load(SAVE_PATH) == OK:
@@ -154,3 +177,7 @@ func save_highest():
 func _notification(what):
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
 		save_highest()
+
+func _on_enemy_stomped():
+	bonus_points += 10
+	update_score()

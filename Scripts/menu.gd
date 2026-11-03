@@ -4,7 +4,6 @@ var time = 0.0
 
 func _ready():
 	print("aspect: ", get_window().content_scale_aspect, "  window: ", get_window().size, "  visible: ", get_viewport().get_visible_rect().size)
-	get_window().content_scale_aspect = Window.CONTENT_SCALE_ASPECT_KEEP_HEIGHT
 	$VBoxContainer/StartButton.pressed.connect(_on_start_pressed)
 	$VBoxContainer/StartButton.grab_focus()
 	var config = ConfigFile.new()
@@ -12,8 +11,8 @@ func _ready():
 	var best = 0
 	if result == OK:
 		best = config.get_value("score", "highest", 0)
-	if has_node("VBoxContainer/BestLabel"):
-		$VBoxContainer/BestLabel.text = "Best: " + str(best)
+	if has_node("VBoxContainer/HighestLabel"):
+		$VBoxContainer/HighestLabel.text = "Highest: " + str(best)
 
 
 func _process(delta):
@@ -22,5 +21,8 @@ func _process(delta):
 	var bounce = abs(sin(time * 3.0)) * 12.0
 	$LittleGuy.position.y = 296.0 - bounce
 
+
 func _on_start_pressed():
 	get_tree().change_scene_to_file("res://Scenes/main.tscn")
+
+

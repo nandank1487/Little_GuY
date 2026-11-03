@@ -45,3 +45,15 @@ XIII. Improved Touch Controls UI
 
 XIV. Improved some minor functions (unnoticable mostly)
 	1. made some minor improvements 
+
+XV. Updated scoring system:-
+	Collecting gems and killing enemies had no effect earlier, now they add up points in the score and ultimately add up in highest score. Now players have a reason to collect gems and kill the monsters
+	1. now collecting each gem gives increases the score by 5 
+	2. killing/stomping each monster increases the score by 10
+
+XVI. added 'invincible flash':-
+	1. Now the player stays invincible for 2 seconds after losing a life.
+	2. for those two seconds, it'll blink
+
+XVII. Improved the game over message animations
+	1. now the game over message comes in a slow and fading style

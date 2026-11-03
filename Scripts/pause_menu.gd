@@ -26,6 +26,7 @@ func _input(event):
 		get_viewport().set_input_as_handled()
 
 
+
 func pause():
 	get_tree().paused = true
 	visible = true

@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://f4jgtrdoe8it"]
 
-[ext_resource type="TileSet" uid="uid://prev6vvesobo" path="res://Little_GuY/Art/world_tileset.tres" id="1_t7rkn"]
+[ext_resource type="TileSet" uid="uid://prev6vvesobo" path="res://Art/world_tileset.tres" id="1_t7rkn"]
 [ext_resource type="PackedScene" uid="uid://deae4rktb8mmd" path="res://Scenes/gem.tscn" id="2_1mobj"]
 [ext_resource type="PackedScene" uid="uid://u1bwt0rqf8an" path="res://Scenes/enemy.tscn" id="3_t7rkn"]
 

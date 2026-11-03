@@ -77,6 +77,9 @@ func _physics_process(delta):
 
 	if invincible_timer > 0:
 		invincible_timer -= delta
+		visual.visible = fmod(invincible_timer, 0.16) < 0.08
+	else:
+		visual.visible = true
 
 
 
@@ -94,7 +97,7 @@ func squash(scale_x, scale_y):
 func die():
 	if lives <= 0 or invincible_timer > 0:
 		return
-	invincible_timer = 0.2 
+	invincible_timer = 2.0
 
 	lives = lives - 1
 	$HurtSound.play()

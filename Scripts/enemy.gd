@@ -9,7 +9,7 @@ var is_dying = false
 @onready var floor_check = $FloorCheck
 @onready var hitbox = $Hitbox
 
-
+signal stomped
 
 func _ready():
 	hitbox.body_entered.connect(_on_hitbox_body_entered)
@@ -70,6 +70,7 @@ func _on_hitbox_body_entered(body):
 
 func stomp(player):
 	is_dying = true
+	stomped.emit()
 	hitbox.set_deferred("monitoring", false)
 	$CollisionShape2D.set_deferred("disabled", true)
 
