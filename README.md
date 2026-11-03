@@ -6,8 +6,8 @@
 
 # 
 
-# (jame gam version) Play it: https://nandank1487.itch.io/little-guy
-# (Savepoint Version) Play it: https://nandank1487.itch.io/little-guy-spv
+# (jame gam version, v1.0) Play it: https://nandank1487.itch.io/little-guy
+# (Savepoint Version, v2.0) Play it: https://nandank1487.itch.io/little-guy-spv
 
 # 
 
